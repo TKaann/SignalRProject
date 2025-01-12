@@ -25,4 +25,3 @@ namespace SignalR.DataAccesLayer.Concrete
         public DbSet <Testimonial> Testimonials { get; set; }
     }
 }
-//testpush
