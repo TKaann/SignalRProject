@@ -1,0 +1,53 @@
+﻿@model CreateDiscountDto
+@{
+	ViewData["Title"] = "CreateDiscount";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Indirim Islemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni Indirimli Urun Girisi</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="Title">Urun Adini Giriniz</label>
+								<input type="text" class="form-control" asp-for="Title" id="Title">
+							</div>
+						</div>
+
+						<div class="card-body">
+							<div class="form-group">
+								<label for="Amount">Urun Indirim Orani Giriniz</label>
+								<input type="text" class="form-control" asp-for="Amount" id="Amount">
+							</div>
+						</div>
+
+						<div class="card-body">
+							<div class="form-group">
+								<label for="ImageUrl">Urun Gorselini Giriniz</label>
+								<input type="text" class="form-control" asp-for="ImageUrl" id="ImageUrl">
+							</div>
+						</div>
+
+						<div class="card-body">
+							<div class="form-group">
+								<label for="Description">Urun Adini Giriniz</label>
+								<input type="text" class="form-control" asp-for="Description" id="Description">
+							</div>
+						</div>
+
+						<div class="card-action">
+							<button class="btn btn-primary">Indirimli Urunu Ekle</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
