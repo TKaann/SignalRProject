@@ -4,6 +4,7 @@ using SignalR.BusinessLayer.Concrete;
 using SignalR.DataAccesLayer.Abstract;
 using SignalR.DataAccesLayer.Concrete;
 using SignalR.DataAccesLayer.EntityFramework;
+using SignalRApi.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
