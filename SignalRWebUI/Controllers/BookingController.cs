@@ -81,6 +81,5 @@ namespace SignalRWebUI.Controllers
             }
             return View();
         }
-        //test2
     }
 }
