@@ -5,3 +5,13 @@
 
 --Kategori Adina Gore Urun Sayisi v1
 --Kategori Adina Gore Urun Sayisi v2
+
+--Ortalama Fiyat
+--En Yuksek & Dusuk Fiyat
+
+--Toplam Siparis Sayisi
+--Aktif Siparis Sayisi
+--Son Siparis Tutari
+--Kasadaki Tutar
+--Bugunku Kazanc
+--Masa Sayisi
