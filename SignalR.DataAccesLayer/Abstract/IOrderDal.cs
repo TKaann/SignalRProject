@@ -9,5 +9,7 @@ namespace SignalR.DataAccesLayer.Abstract
 {
     public interface IOrderDal:IGenericDal<Order>
     {
+        int TotalOrderCount();
+        int ActiveOrderCount();
     }
 }
