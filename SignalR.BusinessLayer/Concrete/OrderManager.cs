@@ -9,9 +9,15 @@ using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-    private readonly IOrderDal _orderDal;
     public class OrderManager : IOrderService
     {
+        private readonly IOrderDal _orderDal;
+
+        public OrderManager(IOrderDal orderDal)
+        {
+            _orderDal = orderDal;
+        }
+
         public void TAdd(Order entity)
         {
             throw new NotImplementedException();
