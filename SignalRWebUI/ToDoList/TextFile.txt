@@ -2,3 +2,6 @@
 --ProductCount
 --Aktif Kategori Sayisi
 --Pasif Kategori Sayisi
+
+--Kategori Adina Gore Urun Sayisi v1
+--Kategori Adina Gore Urun Sayisi v2
