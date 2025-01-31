@@ -21,9 +21,7 @@
 				connection.start().then(() =>{
 					$("#connstatus").text(connection.state);
 					setInterval(()=>{
-						connection.invoke("SendCategoryCount");
-						connection.invoke("SendProductCount");
-						connection.invoke("ActivePassiveCategoryCount");
+						connection.invoke("SendStatistic");
 					},1000);
 
 				}).catch((err) => { console.log(err) });
@@ -117,7 +115,7 @@
 						<div class="row">
 							<div class="col-5">
 								<div class="icon-big text-center">
-									<i class="la la-check-circle"></i>
+									<i class="la la-close"></i>
 								</div>
 							</div>
 							<div class="col-7 d-flex align-items-center">
