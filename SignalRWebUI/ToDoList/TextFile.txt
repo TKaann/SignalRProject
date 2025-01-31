@@ -15,3 +15,10 @@
 --Kasadaki Tutar
 --Bugunku Kazanc
 --Masa Sayisi
+
+
+
+--------------------
+
+
+Istatistiklerin Consume Edilmesi
