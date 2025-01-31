@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +29,13 @@ namespace SignalR.DataAccesLayer.EntityFramework
         {
             using var context = new SignalRContext();
             return context.Orders.OrderByDescending(x=> x.OrderID).Take(1).Select(y=>y.TotalPrice).FirstOrDefault();
+        }
+
+        public decimal TodayTotalPrice()
+        {
+            return 0;
+           // using var context = new SignalRContext();
+            //return context.Orders.Where(x => x.Date == DateTime.Parse(DateTime.Now.ToShortDateString())).Sum(y => y.TotalPrice);
         }
 
         public int TotalOrderCount()
