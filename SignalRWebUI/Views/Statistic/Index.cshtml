@@ -60,6 +60,22 @@
 					$("#productnamebymaxprice").text(value8);
 				});
 
+				connection.on("ReceiveProductNameByMinPrice",(value9)=>{
+					$("#productnamebyminprice").text(value9);
+				});
+
+				connection.on("ReceiveProductAvgPriceByHamburger",(value10)=>{
+					$("#productavgpricebyhamburger").text(value10);
+				});
+
+				connection.on("ReceiveTotalOrderCount",(value11)=>{
+					$("#totalordercount").text(value11);
+				});
+
+				connection.on("ReceiveActiveOrderCount",(value12)=>{
+					$("#activeordercount").text(value12);
+				});
+
 			});
 
 		</script>
@@ -235,13 +251,13 @@
 						<div class="row">
 							<div class="col-5">
 								<div class="icon-big text-center">
-									<i class="la la-users"></i>
+									<i class="la la-star"></i>
 								</div>
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Visitors</p>
-									<h4 class="card-title">1,294</h4>
+									<p class="card-category">En Ucuz Urun</p>
+									<h4 class="card-title" id="productnamebyminprice"></h4>
 								</div>
 							</div>
 						</div>
@@ -259,8 +275,8 @@
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Sales</p>
-									<h4 class="card-title">$ 1,345</h4>
+									<p class="card-category">Ortalama Hamburger Fiyat</p>
+									<h4 class="card-title" id="productavgpricebyhamburger"></h4>
 								</div>
 							</div>
 						</div>
@@ -273,13 +289,13 @@
 						<div class="row">
 							<div class="col-5">
 								<div class="icon-big text-center">
-									<i class="la la-newspaper-o"></i>
+									<i class="la la-shopping-cart"></i>
 								</div>
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Subscribers</p>
-									<h4 class="card-title">1303</h4>
+									<p class="card-category">Toplam Siparis</p>
+									<h4 class="card-title" id="totalordercount"></h4>
 								</div>
 							</div>
 						</div>
@@ -297,8 +313,8 @@
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Order</p>
-									<h4 class="card-title">576</h4>
+									<p class="card-category">Aktif Siparis</p>
+									<h4 class="card-title" id="activeordercount"></h4>
 								</div>
 							</div>
 						</div>
@@ -320,8 +336,8 @@
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Visitors</p>
-									<h4 class="card-title">1,294</h4>
+									<p class="card-category">Signature</p>
+									<h4 class="card-title"></h4>
 								</div>
 							</div>
 						</div>
