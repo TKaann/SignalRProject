@@ -44,6 +44,18 @@
 					$("#passivecategorycount").text(value4);
 				});
 
+				connection.on("ReceiveProductCountCategoryNameHamburger",(value5)=>{
+					$("#productcountcategorynamehamburger").text(value5);
+				});
+
+				connection.on("ReceiveProductCountCategoryNameDrink",(value6)=>{
+					$("#productcountcategorynamedrink").text(value6);
+				});
+				
+				connection.on("ReceiveProductPriceAvg",(value7)=>{
+					$("#productpriceavg").text(value7);
+				});
+
 			});
 
 		</script>
@@ -139,13 +151,13 @@
 						<div class="row">
 							<div class="col-5">
 								<div class="icon-big text-center">
-									<i class="la la-users"></i>
+									<i class="la la-support"></i>
 								</div>
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Visitors</p>
-									<h4 class="card-title">1,294</h4>
+									<p class="card-category">Hamburger</p>
+									<h4 class="card-title" id="productcountcategorynamehamburger"></h4>
 								</div>
 							</div>
 						</div>
@@ -158,13 +170,13 @@
 						<div class="row">
 							<div class="col-5">
 								<div class="icon-big text-center">
-									<i class="la la-bar-chart"></i>
+									<i class="la la-umbrella"></i>
 								</div>
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Sales</p>
-									<h4 class="card-title">$ 1,345</h4>
+									<p class="card-category">Icecek</p>
+									<h4 class="card-title" id="productcountcategorynamedrink"></h4>
 								</div>
 							</div>
 						</div>
@@ -177,13 +189,13 @@
 						<div class="row">
 							<div class="col-5">
 								<div class="icon-big text-center">
-									<i class="la la-newspaper-o"></i>
+									<i class="la la-money"></i>
 								</div>
 							</div>
 							<div class="col-7 d-flex align-items-center">
 								<div class="numbers">
-									<p class="card-category">Subscribers</p>
-									<h4 class="card-title">1303</h4>
+									<p class="card-category">Ortalama Fiyat</p>
+									<h4 class="card-title" id="productpriceavg"></h4>
 								</div>
 							</div>
 						</div>

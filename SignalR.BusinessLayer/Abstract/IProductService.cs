@@ -13,7 +13,7 @@ namespace SignalR.BusinessLayer.Abstract
         int TProductCount();
         int TProductCountCategoryNameHamburger();
         int TProductCountCategoryNameDrink();
-        decimal TProductPrioceAvg();
+        decimal TProductPriceAvg();
         string TProductNameByMaxPrice();
         string TProductNameByMinPrice();
         decimal TProductAvgPriceByHamburger();

@@ -49,7 +49,7 @@ namespace SignalRApi.Controllers
         [HttpGet("ProductPriceAvg")]
         public IActionResult ProductPriceAvg()
         {
-            return Ok(_productService.TProductPrioceAvg());
+            return Ok(_productService.TProductPriceAvg());
         }
 
         [HttpGet("ProductNameByMaxPrice")]

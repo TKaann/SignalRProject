@@ -68,7 +68,7 @@ namespace SignalR.BusinessLayer.Concrete
             return _productDal.ProductCountCategoryNameHamburger();
         }
 
-        public decimal TProductPrioceAvg()
+        public decimal TProductPriceAvg()
         {
             return _productDal.ProductPrioceAvg();
         }
