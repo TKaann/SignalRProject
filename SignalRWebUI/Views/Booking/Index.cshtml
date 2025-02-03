@@ -25,17 +25,39 @@
 					$("#connstatus").text(connection.state);
 					setInterval(()=>{
 						connection.invoke("GetBookingList");
-					},5000);
+					},2000);
 
 				}).catch((err) => { console.log(err) });
 
 
 				connection.on("ReceiveBookingList",(value)=>{
 					console.log(value);
-					$("#bookingList").empty();
-					value.forEach((item,index)=>{
-						$("#bookingList").append(`<li class="list-group-item">${item.name}</li>`)
+					let tablehtml = `<table class=table mt-3><thead>
+									<tr>
+									<th scope="col">#</th>
+									<th scope="col">Ad Soyad</th>
+									<th scope="col">Telefon</th>
+									<th scope="col">Kisi Sayisi</th>
+									<th scope="col">Rezervasyon Durumu</th>
+									<th scope="col">Sil</th>
+									<th scope="col">Guncelle</th>
+									</tr>
+									</thead>
+									<tbody>`
+									$.each(value, (index, item) =>{
+										tablehtml+=`<tr>
+										<td>${item.bookingID}</td>
+										<td>${item.name}</td>
+										<td>${item.phone}</td>
+										<td>${item.personCount}</td>
+										<td>${"Rezervasyon Alindi"}</td>
+										<td><a href="/Booking/DeleteBooking/${item.bookingID}" class="btn btn-outline-danger">Sil</a></td>
+										<td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-success">Guncelle</a></td>
+										</tr>`
+
 					});
+					tablehtml+= "</tbody></table>";
+					$("#bookingList").html(tablehtml);
 				});
 			});
 
@@ -53,38 +75,9 @@
 						<div class="card-sub">
 							Rezervasyon ile ilgili islemleri asagidan gerceklestirebilirsiniz.
 						</div>
-						<table class="table mt-3">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Ad Soyad</th>
-									<th scope="col">Telefon</th>
-									<th scope="col">Kisi Sayisi</th>
-									<th scope="col">Rezervasyon Durumu</th>
-									<th scope="col">Sil</th>
-									<th scope="col">Guncelle</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach (var item in Model)
-								{
-									count++;
-									<tr>
-										<td>@count</td>
-										<td>@item.Name</td>
-										<td>@item.Phone</td>
-										<td>@item.PersonCount</td>
-										<td>Rezervasyon Alindi</td>
-										<td><a href="/Booking/DeleteBooking/@item.BookingID" class="btn btn-outline-danger">Sil</a></td>
-										<td><a href="/Booking/UpdateBooking/@item.BookingID" class="btn btn-outline-success">Guncelle</a></td>
-									</tr>
-								}
-							</tbody>
-						</table>
+						<div id="bookingList"></div>
 						<a href="/Booking/CreateBooking/" class="btn btn-outline-primary"> Yeni Rezervasyon Girisi</a>
-						<div class="col-md-8">
-							<ul class="list-group" id="bookingList"></ul>
-						</div>
+						
 					</div>
 				</div>
 			</div>
