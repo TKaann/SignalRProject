@@ -132,14 +132,18 @@
             var id = value;
             $.ajax({
                 type: 'post',
+                url: "/Menu/AddBasket/" +id,
                 data: {item: id},
                 contentType: 'json',
                 success: function(){
-                    swal("Sectiginiz Urun ID: " + id, "Seciminizi Yaptiniz", "success");
+                    swal("Sectiginiz Urun ID: " + id, "Urun Sepete Eklendi", "success");
 
                 }
             });
         }
+
+
+
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
