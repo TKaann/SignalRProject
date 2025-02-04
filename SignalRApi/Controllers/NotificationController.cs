@@ -50,7 +50,7 @@ namespace SignalRApi.Controllers
             return Ok("Ekleme Islemi Basariyla Tamamlandi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteNotification(int id) 
         {
             var value  = _notificationService.TGetByID(id);
