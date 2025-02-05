@@ -31,7 +31,7 @@
 
 				connection.on("ReceiveMenuTableStatus",(value)=>{
 					console.log(value);
-					let tablehtml;
+					let tablehtml = `<div class="row">`;
 					$.each(value, (index, item) =>{
 						tablehtml +=`<div class="col-md-3">
 					<div class="card card-stats card-danger">
@@ -53,6 +53,7 @@
 					</div>
 				</div>`
 				});
+				tablehtml += "</div>";
 					$("#statuslist").html(tablehtml);
 				});
 			});
@@ -60,7 +61,7 @@
 		</script>
 
 		<h4 class="page-title">Anlik Masa Durumlari Sayisi</h4>
-		<div class="row">
+		
 			@* @foreach (var item in Model)
 			{ *@
 				@* 				if(item.Status == false)
@@ -75,6 +76,6 @@
 				} *@
 			<div id="statuslist"></div>
 			@* } *@
-		</div>
+		
 	</div>
 </div>
