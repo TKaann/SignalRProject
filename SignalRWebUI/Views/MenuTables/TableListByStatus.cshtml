@@ -6,8 +6,36 @@
 	string status = "";
 }
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+
 <div class="content">
 	<div class="container-fluid">
+
+		<script type="text/javascript">
+			$(document).ready(()=>{
+
+				var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7242/SignalRHub").build();
+				$("#connstatus").text(connection.state);
+
+				connection.start().then(() =>{
+					$("#connstatus").text(connection.state);
+					setInterval(()=>{
+						connection.invoke("GetMenuTableStatus");
+					},1000);
+
+				}).catch((err) => { console.log(err) });
+
+
+				connection.on("ReceiveMenuTableStatus",(value)=>{
+					console.log(value);
+				});
+			});
+
+		</script>
+
 		<h4 class="page-title">Anlik Masa Durumlari Sayisi</h4>
 		<div class="row">
 			@foreach(var item in Model)
