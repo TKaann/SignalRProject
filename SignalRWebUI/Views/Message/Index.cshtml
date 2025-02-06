@@ -24,23 +24,48 @@
                     </div>
                 </div>
 
+
                 <div class="row p-1">
                     <div class="col-2">Kullanici Adi:</div>
                     <div class="col-5">
-                        <input type="text" id="userInput" class="form-control" />
+                        <input type="text" id="userinput" class="form-control" />
                     </div>
                 </div>
+
 
                 <div class="row p-1">
                     <div class="col-2">Mesajiniz:</div>
                     <div class="col-5">
-                        <input type="text" class="form-control" id="messageInput" />
+                        <input type="text" class="form-control" id="messageinput" />
+                    </div>
+                </div>
+
+
+                <div class="row p-1">
+                    <div class="col-2"></div>
+                    <div class="col-3">
+                        <input type="button" id="sendbutton" value="Mesaj Gonder" class="btn btn-warning" />
+                    </div>
+                </div>
+
+
+                <div class="row p-1">
+                    <div class="col-12">
+                        <hr />
+                    </div>
+                </div>
+
+
+                <div class="row p-1">
+                    <div class="col-12">
+                        <ul id="messagelist" class="list-group"></ul>
                     </div>
                 </div>
 
             </div>
             
         </div>
+
     </section>
 
     @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
