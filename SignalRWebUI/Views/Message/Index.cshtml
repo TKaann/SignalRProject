@@ -3,5 +3,52 @@
     Layout = null;
 }
 
+
 <!DOCTYPE html>
+<html>
+
+@await Component.InvokeAsync("_UILayoutHeadComponentPartial")
+
+
+<body class="sub_page">
+
+    @await Component.InvokeAsync("_MenuNavbarComponentPartial")
+
+    <section class="food_section layout_padding">
+        <div class="container">
+            
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-center mb-4">SignalR Restoran Anlik Mesajlasma</h3>
+                    </div>
+                </div>
+
+                <div class="row p-1">
+                    <div class="col-2">Kullanici Adi:</div>
+                    <div class="col-5">
+                        <input type="text" id="userInput" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row p-1">
+                    <div class="col-2">Mesajiniz:</div>
+                    <div class="col-5">
+                        <input type="text" class="form-control" id="messageInput" />
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+    @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
+
+    @await Component.InvokeAsync("_UILayoutScrpitComponentPartial")
+
+    
+</body>
+
+</html>
 
