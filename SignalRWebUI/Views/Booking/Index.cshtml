@@ -41,6 +41,8 @@
 									<th scope="col">Rezervasyon Durumu</th>
 									<th scope="col">Sil</th>
 									<th scope="col">Guncelle</th>
+									<th scope="col">Onayla</th>
+									<th scope="col">Iptal Et</th>
 									</tr>
 									</thead>
 									<tbody>`
@@ -50,9 +52,11 @@
 										<td>${item.name}</td>
 										<td>${item.phone}</td>
 										<td>${item.personCount}</td>
-										<td>${"Rezervasyon Alindi"}</td>
+										<td>${item.description}</td>
 										<td><a href="/Booking/DeleteBooking/${item.bookingID}" class="btn btn-outline-danger">Sil</a></td>
 										<td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-success">Guncelle</a></td>
+										<td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-info">Onayla</a></td>
+										<td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-dark">Iptal Et</a></td>
 										</tr>`
 
 					});
