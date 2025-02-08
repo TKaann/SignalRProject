@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <Reference Include="QRCoder">
-      <HintPath>..\..\QRCoder.dll</HintPath>
+      <HintPath>..\QRCoder.dll</HintPath>
     </Reference>
   </ItemGroup>
 
