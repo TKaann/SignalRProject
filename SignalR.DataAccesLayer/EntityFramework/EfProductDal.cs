@@ -66,5 +66,12 @@ namespace SignalR.DataAccesLayer.EntityFramework
             using var context = new SignalRContext();
             return context.Products.Average(x => x.Price);
         }
+
+        public List<Product> GetLast9Products()
+        {
+            var context = new SignalRContext();
+            var values = context.Products.Take(9).ToList();
+            return values;
+        }
     }
 }
