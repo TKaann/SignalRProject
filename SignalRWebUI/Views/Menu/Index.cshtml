@@ -21,16 +21,7 @@
                 </h2>
             </div>
 
-            <ul class="filters_menu">
-                <li class="active" data-filter="*">Tum Urunler</li>
-                <li data-filter=".burger">Hamburger</li>
-                <li data-filter=".pizza">Pizza</li>
-                <li data-filter=".pasta">Makarna</li>
-                <li data-filter=".fries">Kizartmalar</li>
-                <li data-filter=".fries">Salatalar</li>
-                <li data-filter=".fries">Icecekler</li>
-                <li data-filter=".fries">Tatlilar</li>
-            </ul>
+            @await Component.InvokeAsync("_MenuCategoryFilterComponentPartial")
 
             <div class="filters-content">
                 <div class="row grid">
