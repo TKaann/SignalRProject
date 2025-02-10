@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
-using SignalR.DtoLayer.ProductDto;
 using SignalR.DtoLayer.SocialMediaDto;
+using SignalR.DtoLayer.TestimonialDto;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalRApi.Controllers
@@ -14,12 +14,12 @@ namespace SignalRApi.Controllers
     {
         private readonly ISocialMediaService _socialMediaService;
         private readonly IMapper _mapper;
-
         public SocialMediaController(ISocialMediaService socialMediaService, IMapper mapper)
         {
             _socialMediaService = socialMediaService;
             _mapper = mapper;
         }
+
         [HttpGet]
         public IActionResult SocialMediaList()
         {
@@ -29,14 +29,9 @@ namespace SignalRApi.Controllers
         [HttpPost]
         public IActionResult CreateSocialMedia(CreateSocialMediaDto createSocialMediaDto)
         {
-            _socialMediaService.TAdd(new SocialMedia()
-            {
-                Url = createSocialMediaDto.Url,
-                Title = createSocialMediaDto.Title,
-                Icon = createSocialMediaDto.Icon
-            });
+            var value = _mapper.Map<SocialMedia>(createSocialMediaDto);
+            _socialMediaService.TAdd(value);
             return Ok("Sosyal Medya Bilgisi Eklendi");
-
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteSocialMedia(int id)
@@ -49,18 +44,13 @@ namespace SignalRApi.Controllers
         public IActionResult GetSocialMedia(int id)
         {
             var value = _socialMediaService.TGetByID(id);
-            return Ok(value);
+            return Ok(_mapper.Map<GetSocialMediaDto>(value));
         }
         [HttpPut]
         public IActionResult UpdateSocialMedia(UpdateSocialMediaDto updateSocialMediaDto)
         {
-            _socialMediaService.TUpdate(new SocialMedia()
-            {
-                SocialMediaID = updateSocialMediaDto.SocialMediaID,
-                Title = updateSocialMediaDto.Title,
-                Icon = updateSocialMediaDto.Icon,
-                Url = updateSocialMediaDto.Url
-            });
+            var value = _mapper.Map<SocialMedia>(updateSocialMediaDto);
+            _socialMediaService.TUpdate(value);
             return Ok("Sosyal Medya Bilgisi Guncellendi");
         }
     }
