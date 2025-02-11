@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SignalR.DataAccesLayer\SignalR.DataAccesLayer.csproj" />
+    <ProjectReference Include="..\SignalR.DtoLayer\SignalR.DtoLayer.csproj" />
+    <ProjectReference Include="..\SignalRWebUI\SignalRWebUI.csproj" />
   </ItemGroup>
 
 </Project>
