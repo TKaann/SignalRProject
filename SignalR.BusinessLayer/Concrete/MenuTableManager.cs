@@ -1,18 +1,17 @@
-﻿using System;
+﻿using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccesLayer.Abstract;
+using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.BusinessLayer.Abstract;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
     public class MenuTableManager : IMenuTableService
     {
         private readonly IMenuTableDal _menuTableDal;
-
         public MenuTableManager(IMenuTableDal menuTableDal)
         {
             _menuTableDal = menuTableDal;
@@ -21,6 +20,16 @@ namespace SignalR.BusinessLayer.Concrete
         public void TAdd(MenuTable entity)
         {
             _menuTableDal.Add(entity);
+        }
+
+        public void TChangeMenuTableStatusToFalse(int id)
+        {
+            _menuTableDal.ChangeMenuTableStatusToFalse(id);
+        }
+
+        public void TChangeMenuTableStatusToTrue(int id)
+        {
+            _menuTableDal.ChangeMenuTableStatusToTrue(id);
         }
 
         public void TDelete(MenuTable entity)
