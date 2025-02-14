@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SignalR.EntityLayer.Entities
+﻿namespace SignalR.EntiyLayer.Entities
 {
     public class Booking
     {
