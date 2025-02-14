@@ -1,4 +1,4 @@
-﻿using SignalR.DataAccesLayer.Abstract;
+﻿using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccesLayer.Concrete;
 using SignalR.DataAccesLayer.Repositories;
 using SignalR.EntityLayer.Entities;

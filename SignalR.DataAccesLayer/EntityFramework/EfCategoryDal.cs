@@ -1,14 +1,14 @@
-﻿using System;
+﻿using SignalR.DataAccessLayer.Abstract;
+using SignalR.DataAccesLayer.Concrete;
+using SignalR.DataAccesLayer.Repositories;
+using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.DataAccesLayer.Concrete;
-using SignalR.DataAccesLayer.Repositories;
-using SignalR.EntityLayer.Entities;
 
-namespace SignalR.DataAccesLayer.EntityFramework
+namespace SignalR.DataAccessLayer.EntityFramework
 {
     public class EfCategoryDal : GenericRepository<Category>, ICategoryDal
     {
@@ -18,14 +18,14 @@ namespace SignalR.DataAccesLayer.EntityFramework
 
         public int ActiveCategoryCount()
         {
-            using var context = new SignalRContext();
-            return context.Categories.Where(x=> x.Status == true).Count();
+            using var context=new SignalRContext();
+            return context.Categories.Where(x => x.Status == true).Count();
         }
 
         public int CategoryCount()
         {
-            using var contex = new SignalRContext();
-            return contex.Categories.Count();
+            using var context = new SignalRContext();
+            return context.Categories.Count();
         }
 
         public int PassiveCategoryCount()

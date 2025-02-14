@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SignalR.DataAccesLayer.Abstract;
+﻿using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccesLayer.Concrete;
 using SignalR.DataAccesLayer.Repositories;
 using SignalR.EntityLayer.Entities;
 
-namespace SignalR.DataAccesLayer.EntityFramework
+namespace SignalR.DataAccessLayer.EntityFramework
 {
     public class EfTestimonialDal : GenericRepository<Testimonial>, ITestimonialDal
     {

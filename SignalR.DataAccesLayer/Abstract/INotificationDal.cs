@@ -1,19 +1,18 @@
-﻿using System;
+﻿using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.EntityLayer.Entities;
 
-namespace SignalR.DataAccesLayer.Abstract
+namespace SignalR.DataAccessLayer.Abstract
 {
-    public interface INotificationDal:IGenericDal<Notification>
-    {
-        int NotificationCountByStatusFalse();
+	public interface INotificationDal:IGenericDal<Notification>
+	{
+		int NotificationCountByStatusFalse();
+		List<Notification> GetAllNotificationByFalse();
+		void NotificationStatusChangeToTrue(int id);
+		void NotificationStatusChangeToFalse(int id);
 
-        List<Notification> GetAllNotificationByFalse();
-
-        void NotificationStatusChangeToTrue(int id);
-        void NotificationStatusChangeToFalse(int id);
     }
 }

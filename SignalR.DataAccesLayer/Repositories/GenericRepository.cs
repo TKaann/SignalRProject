@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.DataAccesLayer.Abstract;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccesLayer.Concrete;
 
 namespace SignalR.DataAccesLayer.Repositories
