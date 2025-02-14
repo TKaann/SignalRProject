@@ -1,4 +1,5 @@
-﻿namespace SignalRApi.Models
+﻿
+namespace SignalRApi.Models
 {
     public class ResultBasketListWithProducts
     {

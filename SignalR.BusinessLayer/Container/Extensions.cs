@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.BusinessLayer.Concrete;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.DataAccesLayer.EntityFramework;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;

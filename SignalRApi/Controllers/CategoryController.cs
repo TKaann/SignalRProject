@@ -1,10 +1,9 @@
-﻿using System.Drawing.Design;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.DtoLayer.CategoryDto;
-using SignalR.EntityLayer.Entities;
+using SignalR.EntiyLayer.Entities;
 
 namespace SignalRApi.Controllers
 {
@@ -14,21 +13,20 @@ namespace SignalRApi.Controllers
     {
         private readonly ICategoryService _categoryService;
         private readonly IMapper _mapper;
-
         public CategoryController(ICategoryService categoryService, IMapper mapper)
         {
             _categoryService = categoryService;
             _mapper = mapper;
         }
         [HttpGet]
-        public IActionResult CategoryList() 
+        public IActionResult CategoryList()
         {
             var value = _mapper.Map<List<ResultCategoryDto>>(_categoryService.TGetListAll());
             return Ok(value);
         }
 
         [HttpGet("CategoryCount")]
-        public IActionResult CategoryCount() 
+        public IActionResult CategoryCount()
         {
             return Ok(_categoryService.TCategoryCount());
         }
@@ -40,23 +38,21 @@ namespace SignalRApi.Controllers
         }
 
         [HttpGet("PassiveCategoryCount")]
-        public IActionResult PassiceCategoryCount()
+        public IActionResult PassiveCategoryCount()
         {
             return Ok(_categoryService.TPassiveCategoryCount());
         }
 
-
         [HttpPost]
-        public IActionResult CreateCategory(CreateCategoryDto createCategoryDto) 
+        public IActionResult CreateCategory(CreateCategoryDto createCategoryDto)
         {
             createCategoryDto.Status = true;
             var value = _mapper.Map<Category>(createCategoryDto);
             _categoryService.TAdd(value);
             return Ok("Kategori Eklendi");
-
         }
         [HttpDelete("{id}")]
-        public IActionResult DeleteCategory(int id) 
+        public IActionResult DeleteCategory(int id)
         {
             var value = _categoryService.TGetByID(id);
             _categoryService.TDelete(value);
@@ -73,7 +69,7 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<Category>(updateCategoryDto);
             _categoryService.TUpdate(value);
-            return Ok("Kategori Guncellendi");
+            return Ok("Kategori Güncellendi");
         }
     }
 }

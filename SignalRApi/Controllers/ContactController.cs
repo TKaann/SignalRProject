@@ -5,6 +5,7 @@ using SignalR.BusinessLayer.Abstract;
 using SignalR.DtoLayer.CategoryDto;
 using SignalR.DtoLayer.ContactDto;
 using SignalR.EntityLayer.Entities;
+using SignalR.EntiyLayer.Entities;
 
 namespace SignalRApi.Controllers
 {
@@ -20,6 +21,7 @@ namespace SignalRApi.Controllers
             _contactService = contactService;
             _mapper = mapper;
         }
+
         [HttpGet]
         public IActionResult ContactList()
         {
@@ -31,15 +33,14 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<Contact>(createContactDto);
             _contactService.TAdd(value);
-            return Ok("Iletisim Bilgisi Eklendi");
-
+            return Ok("İletişim Bilgisi Eklendi");
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteContact(int id)
         {
             var value = _contactService.TGetByID(id);
             _contactService.TDelete(value);
-            return Ok("Iletisim Bilgisi Silindi");
+            return Ok("İletişim Bilgisi Silindi");
         }
         [HttpGet("{id}")]
         public IActionResult GetContact(int id)
@@ -52,7 +53,7 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<Contact>(updateContactDto);
             _contactService.TUpdate(value);
-            return Ok("Iletisim Bilgisi Guncellendi");
+            return Ok("İletişim Bilgisi Güncellendi");
         }
     }
 }

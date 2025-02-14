@@ -1,6 +1,6 @@
 ﻿using SignalR.EntityLayer.Entities;
 
-namespace SignalR.EntiyLayer.Entities
+namespace SignalR.EntityLayer.Entities
 {
     public class Product
     {

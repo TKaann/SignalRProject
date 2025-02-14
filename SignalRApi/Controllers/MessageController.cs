@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.DtoLayer.MessageDto;
 using SignalR.EntityLayer.Entities;
+using SignalR.EntiyLayer.Entities;
 
 namespace SignalRApi.Controllers
 {
@@ -31,7 +33,7 @@ namespace SignalRApi.Controllers
             createMessageDto.MessageSendDate = DateTime.Now;
             var value = _mapper.Map<Message>(createMessageDto);
             _messageService.TAdd(value);
-            return Ok("Mesaj Basarili Bir Sekilde Gonderildi");
+            return Ok("Mesaj Başarılı Bir Şekilde Gönderildi");
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteMessage(int id)
@@ -45,7 +47,7 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<Message>(updateMessageDto);
             _messageService.TUpdate(value);
-            return Ok("Mesaj Bilgisi Guncellendi");
+            return Ok("Mesaj Bilgisi Güncellendi");
         }
         [HttpGet("{id}")]
         public IActionResult GetMessage(int id)

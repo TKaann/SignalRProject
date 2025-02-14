@@ -4,6 +4,7 @@ using SignalR.BusinessLayer.Concrete;
 using SignalR.BusinessLayer.Container;
 using SignalR.BusinessLayer.ValidationRules.BookingValidations;
 using SignalR.DataAccesLayer.Concrete;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccessLayer.EntityFramework;
 using SignalRApi.Hubs;
 using System.Reflection;

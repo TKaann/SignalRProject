@@ -44,7 +44,7 @@ namespace SignalRApi.Controllers
             createNotificationDto.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             var value = _mapper.Map<Notification>(createNotificationDto);
             _notificationService.TAdd(value);
-            return Ok("Ekleme islemi basarıyla yapildi");
+            return Ok("Ekleme işlemi başarıyla yapıldı");
         }
 
         [HttpDelete("{id}")]
@@ -66,21 +66,21 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<Notification>(updateNotificationDto);
             _notificationService.TUpdate(value);
-            return Ok("Guncelleme islemi basariyla yapildi");
+            return Ok("Güncelleme işlemi başarıyla yapıldı");
         }
 
         [HttpGet("NotificationStatusChangeToFalse/{id}")]
         public IActionResult NotificationStatusChangeToFalse(int id)
         {
             _notificationService.TNotificationStatusChangeToFalse(id);
-            return Ok("Guncelleme yapildi");
+            return Ok("Güncelleme yapıldı");
         }
 
         [HttpGet("NotificationStatusChangeToTrue/{id}")]
         public IActionResult NotificationStatusChangeToTrue(int id)
         {
             _notificationService.TNotificationStatusChangeToTrue(id);
-            return Ok("Guncelleme yapildi");
+            return Ok("Güncelleme yapıldı");
         }
     }
 }

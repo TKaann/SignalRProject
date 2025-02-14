@@ -1,11 +1,13 @@
 ﻿using SignalR.BusinessLayer.Abstract;
-using SignalR.DataAccesLayer.Abstract;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
+using SignalR.EntiyLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SignalR.EntiyLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {

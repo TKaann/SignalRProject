@@ -6,6 +6,7 @@ using SignalR.DtoLayer.DiscountDto;
 using SignalR.DtoLayer.FeatureDto;
 using SignalR.DtoLayer.SliderDto;
 using SignalR.EntityLayer.Entities;
+using SignalR.EntiyLayer.Entities;
 
 namespace SignalRApi.Controllers
 {
@@ -32,14 +33,14 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<Slider>(createSliderDto);
             _sliderService.TAdd(value);
-            return Ok("One Cikan Bilgisi Eklendi");
+            return Ok("Öne Çıkan Bilgisi Eklendi");
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteSlider(int id)
         {
             var value = _sliderService.TGetByID(id);
             _sliderService.TDelete(value);
-            return Ok("One Cikan Bilgisi Silindi");
+            return Ok("Öne Çıkan Bilgisi Silindi");
         }
 
         [HttpGet("{id}")]
@@ -53,7 +54,7 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<Slider>(updateSliderDto);
             _sliderService.TUpdate(value);
-            return Ok("One Cikan Alan Bilgisi Guncellendi");
+            return Ok("Öne Çıkan Alan Bilgisi Güncellendi");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SignalR.EntiyLayer.Entities
+﻿namespace SignalR.EntityLayer.Entities
 {
     public class Feature
     {

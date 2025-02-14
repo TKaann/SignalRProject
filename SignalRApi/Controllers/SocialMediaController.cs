@@ -51,7 +51,7 @@ namespace SignalRApi.Controllers
         {
             var value = _mapper.Map<SocialMedia>(updateSocialMediaDto);
             _socialMediaService.TUpdate(value);
-            return Ok("Sosyal Medya Bilgisi Guncellendi");
+            return Ok("Sosyal Medya Bilgisi Güncellendi");
         }
     }
 }

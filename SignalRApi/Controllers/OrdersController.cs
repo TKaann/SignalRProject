@@ -16,7 +16,7 @@ namespace SignalRApi.Controllers
         }
 
         [HttpGet("TotalOrderCount")]
-        public IActionResult TotalOrderCount() 
+        public IActionResult TotalOrderCount()
         {
             return Ok(_orderService.TTotalOrderCount());
         }
@@ -32,12 +32,10 @@ namespace SignalRApi.Controllers
         {
             return Ok(_orderService.TLastOrderPrice());
         }
-
         [HttpGet("TodayTotalPrice")]
-        public IActionResult TodayTotalPrice() 
+        public IActionResult TodayTotalPrice()
         {
-            return Ok(_orderService.TTodayTotalPrice());
+            return Ok(_orderService.TTodayTotalPrice());    
         }
-
     }
 }
