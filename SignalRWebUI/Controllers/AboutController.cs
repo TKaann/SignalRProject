@@ -1,19 +1,17 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SignalRWebUI.Dtos.AboutDtos;
+using System.Text;
 
 namespace SignalRWebUI.Controllers
 {
     public class AboutController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public AboutController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -44,7 +42,6 @@ namespace SignalRWebUI.Controllers
             }
             return View();
         }
-
         public async Task<IActionResult> DeleteAbout(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -62,8 +59,8 @@ namespace SignalRWebUI.Controllers
             var responseMessage = await client.GetAsync($"https://localhost:7242/api/About/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var JsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateAboutDto>(JsonData);
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<UpdateAboutDto>(jsonData);
                 return View(values);
             }
             return View();

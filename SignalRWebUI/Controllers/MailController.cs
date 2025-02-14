@@ -27,7 +27,7 @@ namespace SignalRWebUI.Controllers
             bodyBuilder.TextBody = createMailDto.Body; ;
             mimeMessage.Body = bodyBuilder.ToMessageBody();
 
-            mimeMessage.Subject = createMailDto.Subject;
+            mimeMessage.Subject=createMailDto.Subject;
 
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);

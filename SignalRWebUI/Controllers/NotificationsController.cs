@@ -1,19 +1,17 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SignalRWebUI.Dtos.NotificationDtos;
+using System.Text;
 
 namespace SignalRWebUI.Controllers
 {
     public class NotificationsController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public NotificationsController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -44,7 +42,6 @@ namespace SignalRWebUI.Controllers
             }
             return View();
         }
-
         public async Task<IActionResult> DeleteNotification(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -62,8 +59,8 @@ namespace SignalRWebUI.Controllers
             var responseMessage = await client.GetAsync($"https://localhost:7242/api/Notification/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var JsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateNotificationDto>(JsonData);
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<UpdateNotificationDto>(jsonData);
                 return View(values);
             }
             return View();

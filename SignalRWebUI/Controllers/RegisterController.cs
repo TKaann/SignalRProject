@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.EntityLayer.Entities;
 using SignalRWebUI.Dtos.IdentityDtos;
@@ -8,11 +9,11 @@ namespace SignalRWebUI.Controllers
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
-
         public RegisterController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
         }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -20,7 +21,7 @@ namespace SignalRWebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(RegisterDto registerDto)
+        public async Task< IActionResult> Index(RegisterDto registerDto)
         {
             var appUser = new AppUser()
             {
@@ -35,6 +36,6 @@ namespace SignalRWebUI.Controllers
                 return RedirectToAction("Index", "Login");
             }
             return View();
-        }    
+        }
     }
 }

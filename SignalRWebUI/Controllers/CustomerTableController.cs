@@ -16,7 +16,7 @@ namespace SignalRWebUI.Controllers
         public async Task<IActionResult> CustomerTableList()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7186/api/MenuTables");
+            var responseMessage = await client.GetAsync("https://localhost:7242/api/MenuTables");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

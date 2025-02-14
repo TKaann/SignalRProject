@@ -1,19 +1,17 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SignalRWebUI.Dtos.CategoryDtos;
+using System.Text;
 
 namespace SignalRWebUI.Controllers
 {
     public class CategoryController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public CategoryController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -35,8 +33,8 @@ namespace SignalRWebUI.Controllers
         public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
         {
             createCategoryDto.Status = true;
-            var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(createCategoryDto);
+            var client= _httpClientFactory.CreateClient();
+            var jsonData=JsonConvert.SerializeObject(createCategoryDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("https://localhost:7242/api/Category", stringContent);
             if (responseMessage.IsSuccessStatusCode)
@@ -45,10 +43,9 @@ namespace SignalRWebUI.Controllers
             }
             return View();
         }
-
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var client = _httpClientFactory.CreateClient();
+            var client= _httpClientFactory.CreateClient();
             var responseMessage = await client.DeleteAsync($"https://localhost:7242/api/Category/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -59,12 +56,12 @@ namespace SignalRWebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateCategory(int id)
         {
-            var client = _httpClientFactory.CreateClient();
+            var client= _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"https://localhost:7242/api/Category/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var JsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateCategoryDto>(JsonData);
+                var jsonData= await responseMessage.Content.ReadAsStringAsync();
+                var values=JsonConvert.DeserializeObject<UpdateCategoryDto>(jsonData);
                 return View(values);
             }
             return View();
@@ -74,10 +71,10 @@ namespace SignalRWebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData=JsonConvert.SerializeObject(updateCategoryDto);
-            StringContent stringContent = new StringContent(jsonData,Encoding.UTF8, "application/json");
+            StringContent stringContent=new StringContent (jsonData,Encoding.UTF8,"application/json");
             var responseMessage = await client.PutAsync("https://localhost:7242/api/Category/", stringContent);
-            if (responseMessage.IsSuccessStatusCode) 
-            { 
+            if (responseMessage.IsSuccessStatusCode)
+            {
                 return RedirectToAction("Index");
             }
             return View();

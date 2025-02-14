@@ -1,20 +1,18 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SignalRWebUI.Dtos.FeatureDtos;
 using SignalRWebUI.Dtos.SliderDtos;
+using System.Text;
 
 namespace SignalRWebUI.Controllers
 {
     public class SliderController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public SliderController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -45,7 +43,6 @@ namespace SignalRWebUI.Controllers
             }
             return View();
         }
-
         public async Task<IActionResult> DeleteSlider(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -63,8 +60,8 @@ namespace SignalRWebUI.Controllers
             var responseMessage = await client.GetAsync($"https://localhost:7242/api/Slider/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var JsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateSliderDto>(JsonData);
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<UpdateSliderDto>(jsonData);
                 return View(values);
             }
             return View();
