@@ -1,13 +1,11 @@
-﻿using System;
+﻿using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccesLayer.Abstract;
+using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.BusinessLayer.Abstract;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.DataAccesLayer.EntityFramework;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
@@ -22,17 +20,17 @@ namespace SignalR.BusinessLayer.Concrete
 
         public void TAdd(SocialMedia entity)
         {
-            _socialMediaDal.Add(entity);
+           _socialMediaDal.Add(entity);
         }
 
         public void TDelete(SocialMedia entity)
         {
-            _socialMediaDal.Delete(entity);
+           _socialMediaDal.Delete(entity);
         }
 
         public SocialMedia TGetByID(int id)
         {
-            return _socialMediaDal.GetByID(id);
+           return _socialMediaDal.GetByID(id);
         }
 
         public List<SocialMedia> TGetListAll()

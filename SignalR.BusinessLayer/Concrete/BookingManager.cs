@@ -1,11 +1,11 @@
-﻿using System;
+﻿using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccesLayer.Abstract;
+using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.BusinessLayer.Abstract;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
@@ -18,17 +18,17 @@ namespace SignalR.BusinessLayer.Concrete
             _bookingDal = bookingDal;
         }
 
-        public void BookingStatusApproved(int id)
-        {
+		public void BookingStatusApproved(int id)
+		{
             _bookingDal.BookingStatusApproved(id);
-        }
+		}
 
-        public void BookingStatusCancelled(int id)
-        {
-           _bookingDal.BookingStatusCancelled(id);
-        }
+		public void BookingStatusCancelled(int id)
+		{
+            _bookingDal.BookingStatusCancelled(id);
+		}
 
-        public void TAdd(Booking entity)
+		public void TAdd(Booking entity)
         {
             _bookingDal.Add(entity);
         }

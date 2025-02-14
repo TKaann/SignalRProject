@@ -1,18 +1,17 @@
-﻿using System;
+﻿using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccesLayer.Abstract;
+using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.BusinessLayer.Abstract;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
         private readonly ICategoryDal _categoryDal;
-
         public CategoryManager(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
@@ -35,12 +34,12 @@ namespace SignalR.BusinessLayer.Concrete
 
         public void TDelete(Category entity)
         {
-            _categoryDal.Delete(entity);
+           _categoryDal.Delete(entity);
         }
 
         public Category TGetByID(int id)
         {
-            return _categoryDal.GetByID(id);    
+            return _categoryDal.GetByID(id);
         }
 
         public List<Category> TGetListAll()

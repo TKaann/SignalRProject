@@ -1,11 +1,11 @@
-﻿using System;
+﻿using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccesLayer.Abstract;
+using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.BusinessLayer.Abstract;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
@@ -20,40 +20,40 @@ namespace SignalR.BusinessLayer.Concrete
 
         public void TAdd(Discount entity)
         {
-            _discountDal.Add(entity);
+           _discountDal.Add(entity);
         }
 
-        public void TChangeStatusToFalse(int id)
-        {
+		public void TChangeStatusToFalse(int id)
+		{
             _discountDal.ChangeStatusToFalse(id);
-        }
+		}
 
-        public void TChangeStatusToTrue(int id)
-        {
+		public void TChangeStatusToTrue(int id)
+		{
             _discountDal.ChangeStatusToTrue(id);
-        }
+		}
 
-        public void TDelete(Discount entity)
+		public void TDelete(Discount entity)
         {
-            _discountDal.Delete(entity);
+           _discountDal.Delete(entity);
         }
 
         public Discount TGetByID(int id)
         {
-            return _discountDal.GetByID(id);
+           return _discountDal.GetByID(id);
         }
 
         public List<Discount> TGetListAll()
         {
-            return _discountDal.GetListAll();
+           return _discountDal.GetListAll();
         }
 
-        public List<Discount> TGetListByStatusTrue()
-        {
+		public List<Discount> TGetListByStatusTrue()
+		{
             return _discountDal.GetListByStatusTrue();
-        }
+		}
 
-        public void TUpdate(Discount entity)
+		public void TUpdate(Discount entity)
         {
             _discountDal.Update(entity);
         }

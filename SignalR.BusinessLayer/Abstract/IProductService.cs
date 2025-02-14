@@ -1,22 +1,25 @@
-﻿using System;
+﻿using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Abstract
 {
-    public interface IProductService : IGenericService<Product>
+    public interface IProductService:IGenericService<Product>
     {
         List<Product> TGetProductsWithCategories();
         int TProductCount();
-        int TProductCountCategoryNameHamburger();
-        int TProductCountCategoryNameDrink();
+        int TProductCountByCategoryNameHamburger();
+        int TProductCountByCategoryNameDrink();
         decimal TProductPriceAvg();
         string TProductNameByMaxPrice();
         string TProductNameByMinPrice();
         decimal TProductAvgPriceByHamburger();
-        List<Product> TGetLast9Products();
-    }
+        decimal TProductPriceBySteakBurger();
+        decimal TTotalPriceByDrinkCategory();
+        decimal TTotalPriceBySaladCategory();
+		List<Product> TGetLast9Products();
+	}
 }

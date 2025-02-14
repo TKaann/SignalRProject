@@ -1,21 +1,21 @@
-﻿using System;
+﻿using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccesLayer.Abstract;
+using SignalR.EntityLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.BusinessLayer.Abstract;
-using SignalR.DataAccesLayer.Abstract;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
     public class MoneyCaseManager : IMoneyCaseService
     {
-        private readonly IMoneyCaseDal _moneyucaseDal;
+        private readonly IMoneyCaseDal _moneyCaseDal;
 
-        public MoneyCaseManager(IMoneyCaseDal moneyucaseDal)
+        public MoneyCaseManager(IMoneyCaseDal moneyCaseDal)
         {
-            _moneyucaseDal = moneyucaseDal;
+            _moneyCaseDal = moneyCaseDal;
         }
 
         public void TAdd(MoneyCase entity)
@@ -40,7 +40,7 @@ namespace SignalR.BusinessLayer.Concrete
 
         public decimal TTotalMoneyCaseAmount()
         {
-            return _moneyucaseDal.TotalMoneyCaseAmount();
+            return _moneyCaseDal.TotalMoneyCaseAmount();
         }
 
         public void TUpdate(MoneyCase entity)
