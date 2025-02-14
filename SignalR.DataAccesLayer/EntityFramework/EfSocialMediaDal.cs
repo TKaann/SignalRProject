@@ -2,7 +2,6 @@
 using SignalR.DataAccesLayer.Concrete;
 using SignalR.DataAccesLayer.Repositories;
 using SignalR.EntityLayer.Entities;
-using SignalR.EntiyLayer.Entities;
 
 namespace SignalR.DataAccessLayer.EntityFramework
 {
