@@ -1,53 +1,51 @@
 ﻿<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
 
 <div class="main-header">
 
 	<script type="text/javascript">
-		$(document).ready(()=>{
 
-			var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7242/SignalRHub").build();
+		$(document).ready(() => {
+
+			var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7186/SignalRHub").build();
 			$("#connstatus").text(connection.state);
-
-			connection.start().then(() =>{
+			connection.start().then(() => {
 				$("#connstatus").text(connection.state);
-				setInterval(()=>{
+				setInterval(() => {
 					connection.invoke("SendNotification");
-				},2000);
-
+				}, 1000);
 			}).catch((err) => { console.log(err) });
 
 
-			connection.on("ReceiveNotificationCountByFalse",(value)=>{
+			connection.on("ReceiveNotificationCountByFalse", (value) => {
 				$("#notificationcount").text(value);
 			});
 
-			connection.on("ReceiveNotificationListByFalse",(value)=>{
+			connection.on("ReceiveNotificationListByFalse", (value) => {
 				console.log(value);
 				$("#notilist").empty();
-				for (var i =0; i< value.length; i++){
+				for (var i = 0; i < value.length;i++){
 					$("#notilist").append(`<a href="#">
-										<div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
-										<div class="notif-content">
-										<span class="block">
-										${value[i].description}
-										</span>
-										<span class="time">${value[i].date}</span>
-										</div>
-										</a>
-										`)
+					<div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
+					<div class="notif-content">
+					<span class="block">
+					${value[i].description}
+					</span>
+					<span class="time">${value[i].date}</span>
+					</div>
+					</a>
+					`)
 				};
 			});
 		});
 
 	</script>
 
-
 	<div class="logo-header">
 		<a href="index.html" class="logo">
-			Admin SignalR
+			SignalR Admin
 		</a>
 		<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -59,7 +57,7 @@
 
 			<form class="navbar-left navbar-form nav-search mr-md-3" action="">
 				<div class="input-group">
-					<input type="text" placeholder="Aranacak Kelime ..." class="form-control">
+					<input type="text" placeholder="Aranacak Kelime..." class="form-control">
 					<div class="input-group-append">
 						<span class="input-group-text">
 							<i class="la la-search search-icon"></i>
@@ -76,7 +74,7 @@
 						<a class="dropdown-item" href="#">Gelen Mesajlar</a>
 						<a class="dropdown-item" href="#">Rezervasyonlar</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Iletisim</a>
+						<a class="dropdown-item" href="#">İletişim</a>
 					</div>
 				</li>
 				<li class="nav-item dropdown hidden-caret">
@@ -86,7 +84,7 @@
 					</a>
 					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
 						<li>
-							<div class="dropdown-title">Yeni Bildirim Var</div>
+							<div class="dropdown-title">Yeni Bildirimleriniz Var</div>
 						</li>
 						<li>
 							<div class="notif-center">
@@ -106,18 +104,18 @@
 								<div class="u-img"><img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg" alt="user"></div>
 								<div class="u-text">
 									<h4>Admin</h4>
-									<p class="text-muted">signalRRestoran.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Menuyu Goruntule</a>
+									<p class="text-muted">signalR@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Menüyü Gör</a>
 								</div>
 							</div>
 						</li>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><i class="ti-user"></i> Menu</a>
+						<a class="dropdown-item" href="#"><i class="ti-user"></i> Menü</a>
 						<a class="dropdown-item" href="#"></i> Ayarlar</a>
 						<a class="dropdown-item" href="#"><i class="ti-email"></i> Rezervasyonlar</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#"><i class="ti-settings"></i> Dashboard</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Cikis</a>
+						<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Çıkış Yap</a>
 					</ul>
 					<!-- /.dropdown-user -->
 				</li>
