@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.DtoLayer.CategoryDto;
-using SignalR.EntiyLayer.Entities;
+using SignalR.EntityLayer.Entities;
 
 namespace SignalRApi.Controllers
 {

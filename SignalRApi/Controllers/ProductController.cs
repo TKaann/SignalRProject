@@ -6,7 +6,7 @@ using SignalR.BusinessLayer.Abstract;
 using SignalR.DataAccesLayer.Concrete;
 using SignalR.DtoLayer.FeatureDto;
 using SignalR.DtoLayer.ProductDto;
-using SignalR.EntiyLayer.Entities;
+using SignalR.EntityLayer.Entities;
 
 namespace SignalRApi.Controllers
 {

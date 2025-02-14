@@ -6,7 +6,6 @@ using SignalR.DtoLayer.DiscountDto;
 using SignalR.DtoLayer.FeatureDto;
 using SignalR.DtoLayer.SliderDto;
 using SignalR.EntityLayer.Entities;
-using SignalR.EntiyLayer.Entities;
 
 namespace SignalRApi.Controllers
 {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SignalR.EntityLayer.Entities;
 using SignalR.BusinessLayer.Abstract;
 
 namespace SignalRApi.Controllers

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.DtoLayer.MessageDto;
 using SignalR.EntityLayer.Entities;
-using SignalR.EntiyLayer.Entities;
 
 namespace SignalRApi.Controllers
 {

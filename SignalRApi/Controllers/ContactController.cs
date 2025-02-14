@@ -5,7 +5,6 @@ using SignalR.BusinessLayer.Abstract;
 using SignalR.DtoLayer.CategoryDto;
 using SignalR.DtoLayer.ContactDto;
 using SignalR.EntityLayer.Entities;
-using SignalR.EntiyLayer.Entities;
 
 namespace SignalRApi.Controllers
 {
