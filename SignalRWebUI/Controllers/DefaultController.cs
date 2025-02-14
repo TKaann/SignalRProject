@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SignalR.DtoLayer.ContactDto;
-using SignalR.DtoLayer.MessageDto;
+using SignalRWebUI.Dtos.MessageDtos;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json.Nodes;
